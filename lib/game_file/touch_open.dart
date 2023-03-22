@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../globals.dart';
 
 enum Direction { up, down, left, right }
@@ -55,7 +54,8 @@ class GamePageOpenState extends State<GamePageOpen> {
                     },
                     child: const Text("Try Again")),
                 TextButton(
-                    onPressed: () => SystemNavigator.pop(),
+                    //onPressed: () => SystemNavigator.pop(),
+                  onPressed: () => Navigator.pop(context),
                     child: const Text("Exit"))
               ]);
         });

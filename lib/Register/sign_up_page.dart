@@ -92,7 +92,8 @@ class _SignUpClassState extends State<SignUpClass> {
                         CircleAvatar(
                           radius: 28,
                           child: IconButton(
-                            onPressed: () => Null,
+                            onPressed: () =>
+                                Navigator.pushNamed(context, 'register'),
                             icon: const Icon(Icons.arrow_forward),
                           ),
                         )

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "194694849600",
+    "project_id": "fir-snake-ed774",
+    "storage_bucket": "fir-snake-ed774.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194694849600:android:b1c2a0a7c0937476a76ba5",
+        "android_client_info": {
+          "package_name": "com.example.game_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194694849600-ls2ttgd7tjgutkc0bcblnvjp34et0keh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Kf-qmfkrip_NqssA0iJQfw6slxxNSgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194694849600-ls2ttgd7tjgutkc0bcblnvjp34et0keh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

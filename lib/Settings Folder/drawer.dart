@@ -1,4 +1,4 @@
-import 'package:SnakeHost/design_folder/settings.dart';
+import 'package:SnakeHost/Settings Folder/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
