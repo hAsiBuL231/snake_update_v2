@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../globals.dart';
 
 enum Direction { up, down, left, right }
@@ -44,18 +45,20 @@ class GamePageClosedState extends State<GamePageClosed> {
               actions: [
                 TextButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) {
-                            fruit = 50;
-                            score = 0;
-                            snakePosition = [0, 20, 40];
-                            return const GamePageClosed();
-                          }));
+                      fruit = 50;
+                      score = 0;
+                      snakePosition = [0, 20, 40];
+                      Navigator.pop(context);
+                      /*Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GamePageClosed()));
+                      */
                     },
                     child: const Text("Try Again")),
                 TextButton(
                     //onPressed: () => SystemNavigator.pop(),
-                  onPressed: () => Navigator.pop(context),
+                    onPressed: () => Navigator.pop(context),
                     child: const Text("Exit"))
               ]);
         });
@@ -65,28 +68,28 @@ class GamePageClosedState extends State<GamePageClosed> {
     switch (direction) {
       case Direction.up:
         if (snakePosition.last < grow) {
-            gameOver();
+          gameOver();
         } else {
           snakePosition.add(snakePosition.last - grow);
         }
         break;
       case Direction.down:
         if (snakePosition.last > grow * gColumn) {
-            gameOver();
+          gameOver();
         } else {
           snakePosition.add(snakePosition.last + grow);
         }
         break;
       case Direction.left:
         if (snakePosition.last % grow == 0) {
-            gameOver();
+          gameOver();
         } else {
           snakePosition.add(snakePosition.last - 1);
         }
         break;
       case Direction.right:
         if ((snakePosition.last + 1) % grow == 0) {
-            gameOver();
+          gameOver();
         } else {
           snakePosition.add(snakePosition.last + 1);
         }
@@ -138,7 +141,7 @@ class GamePageClosedState extends State<GamePageClosed> {
                       padding: const EdgeInsets.all(10),
                       itemCount: grow * gColumn,
                       gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: grow,
                         //mainAxisSpacing: 0.5,
                         //crossAxisSpacing: 0.5,

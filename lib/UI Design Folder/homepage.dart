@@ -23,13 +23,10 @@ class HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         drawer: const Func(),
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+            backgroundColor: Colors.transparent,
             title: const Text("Flutter Snake Game"),
             centerTitle: false,
-            shape: const RoundedRectangleBorder(
-                side: BorderSide.none,
-                borderRadius: BorderRadius.horizontal(
-                    left: Radius.circular(25), right: Radius.circular(25))),
+
             leading: IconButton(
                 icon: const Icon(Icons.menu),
                 onPressed: () {
@@ -52,49 +49,41 @@ class HomePageState extends State<HomePage> {
                 return [const PopupMenuItem(child: Text("hello"))];
               })
             ]),
-        body: Container(
+        body: Center(
           child: Column(children: <Widget>[
-            Padding(
-                padding: const EdgeInsets.only(left: 12, right: 4, top: 30),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(200.0),
-                    child: Image.asset('images/snake.png',
-                        width: 120.0, height: 120.0, fit: BoxFit.fill))),
+            ClipRRect(
+                borderRadius: BorderRadius.circular(200.0),
+                child: Image.asset('images/snake.png',
+                    width: 120.0, height: 120.0)),
             const Padding(
-                padding: EdgeInsets.fromLTRB(15, 15, 15, 100),
-                child: Text("Welcome to \nSnakeHost",
+                padding: EdgeInsets.fromLTRB(15, 15, 15, 50),
+                child: Text("Welcome to\nSnakeHost",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Raleway',
                         fontSize: 25.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.black))),
-            // ignore: deprecated_member_use
-            Center(
-                // ignore: deprecated_member_use
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) {
-                        if (gBox == 'Opened') {
-                          return const GamePageOpen();
-                        } else {
-                          return const GamePageClosed();
-                        }
-                      }));
-                    },
-                    child: Container(
-                        padding: const EdgeInsets.all(20.0),
-                        color: Colors.black,
-                        child: const Text("Start Game",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'GideonRoman',
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold)))))
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  if (gBox == 'Opened') {
+                    return const GamePageOpen();
+                  } else {
+                    return const GamePageClosed();
+                  }
+                }));
+              },
+              child: Image(
+                  image: AssetImage('images/Start button.png'),
+                  height: 230,
+                  width: 230),
+            )
           ]),
         ),
-        floatingActionButton: const Icon(Icons.account_circle),
+        floatingActionButton: const Icon(Icons.account_circle,
+            size: 50, color: Colors.lightGreen),
       ),
     );
   }

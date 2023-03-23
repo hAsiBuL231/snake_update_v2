@@ -45,7 +45,9 @@ class _AllPagesClassState extends State<AllPagesClass> {
               icon: const Icon(Icons.cabin)),
           backgroundColor: Colors.blue,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusDirectional.circular(20)),
+              //borderRadius: BorderRadiusDirectional.circular(20)),
+              borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(25), right: Radius.circular(25))),
           title: const Text('All Pages'),
           actions: const [Icon(Icons.ac_unit)],
           bottom: const PreferredSize(
@@ -104,10 +106,8 @@ class _AllPagesClassState extends State<AllPagesClass> {
                       )))
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              BackButton(
-                  onPressed: () => Navigator.pop(context)),
-              CloseButton( onPressed: () => SystemNavigator.pop()
-              )
+              BackButton(onPressed: () => Navigator.pop(context)),
+              CloseButton(onPressed: () => SystemNavigator.pop())
             ]),
             DropdownButton(
                 // Initial Value
